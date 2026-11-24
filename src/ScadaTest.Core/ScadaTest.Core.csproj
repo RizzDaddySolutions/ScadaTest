@@ -1,0 +1,5 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <Description>Vendor-neutral abstractions, assertions and session model for SCADA testing.</Description>
+  </PropertyGroup>
+</Project>

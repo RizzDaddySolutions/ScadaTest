@@ -1,0 +1,8 @@
+# How the OMI driver reaches screens and reads symbols. Regions are relative to the ViewApp window.
+screens:
+  Area200_Overview: { automationId: NavArea200, settle: 1s }
+symbols:
+  P-101:
+    region: [412, 220, 48, 48]
+    tolerance: 40
+    states: { running: "#00B050", stopped: "#808080", fault: "#FF0000" }

@@ -1,0 +1,18 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <Description>The scadatest command-line runner.</Description>
+    <AssemblyName>scadatest</AssemblyName>
+    <RootNamespace>ScadaTest.Runner</RootNamespace>
+    <PackAsTool>true</PackAsTool>
+    <ToolCommandName>scadatest</ToolCommandName>
+    <PackageId>ScadaTest.Runner</PackageId>
+  </PropertyGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ScadaTest.Scenarios\ScadaTest.Scenarios.csproj" />
+    <ProjectReference Include="..\ScadaTest.Reporting\ScadaTest.Reporting.csproj" />
+    <ProjectReference Include="..\ScadaTest.Adapters.InMemory\ScadaTest.Adapters.InMemory.csproj" />
+    <ProjectReference Include="..\ScadaTest.Adapters.OpcUa\ScadaTest.Adapters.OpcUa.csproj" />
+    <ProjectReference Include="..\ScadaTest.Adapters.Historian\ScadaTest.Adapters.Historian.csproj" />
+  </ItemGroup>
+</Project>

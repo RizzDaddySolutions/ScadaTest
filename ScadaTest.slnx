@@ -1,0 +1,15 @@
+<Solution>
+  <Folder Name="/src/">
+    <Project Path="src/ScadaTest.Adapters.Historian/ScadaTest.Adapters.Historian.csproj" />
+    <Project Path="src/ScadaTest.Adapters.InMemory/ScadaTest.Adapters.InMemory.csproj" />
+    <Project Path="src/ScadaTest.Adapters.OpcUa/ScadaTest.Adapters.OpcUa.csproj" />
+    <Project Path="src/ScadaTest.Core/ScadaTest.Core.csproj" />
+    <Project Path="src/ScadaTest.Hmi.Omi/ScadaTest.Hmi.Omi.csproj" />
+    <Project Path="src/ScadaTest.Reporting/ScadaTest.Reporting.csproj" />
+    <Project Path="src/ScadaTest.Runner/ScadaTest.Runner.csproj" />
+    <Project Path="src/ScadaTest.Scenarios/ScadaTest.Scenarios.csproj" />
+  </Folder>
+  <Folder Name="/tests/">
+    <Project Path="tests/ScadaTest.Tests/ScadaTest.Tests.csproj" />
+  </Folder>
+</Solution>

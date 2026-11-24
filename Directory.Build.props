@@ -1,0 +1,13 @@
+<Project>
+  <PropertyGroup>
+    <TargetFramework>net10.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <LangVersion>latest</LangVersion>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <!-- Lets Windows-only projects (HMI driver) compile on non-Windows build agents. -->
+    <EnableWindowsTargeting>true</EnableWindowsTargeting>
+    <Authors>RizzDaddySolutions</Authors>
+    <Product>ScadaTest</Product>
+  </PropertyGroup>
+</Project>

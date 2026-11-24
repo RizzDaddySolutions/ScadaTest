@@ -1,0 +1,18 @@
+id: PUMP-P101-START
+title: P-101 start command animates the pump
+requires: [tags, hmi]
+tags: [pumps, area-200, smoke]
+setup:
+  - sim_reset: {}
+  - write: { tag: P-101.Mode, value: Auto }
+  - expect_tag: { tag: P-101.Running, equals: false, within: 5s }
+steps:
+  - open_screen: Area200_Overview
+  - write: { tag: P-101.StartCmd, value: true }
+  - expect_tag: { tag: P-101.Running, equals: true, within: 10s }
+  - expect_symbol: { symbol: P-101, state: running, within: 3s }
+  - write: { tag: P-101.StopCmd, value: true }
+  - expect_tag: { tag: P-101.Running, equals: false, within: 10s }
+  - expect_symbol: { symbol: P-101, state: stopped, within: 3s }
+teardown:
+  - write: { tag: P-101.StopCmd, value: true }

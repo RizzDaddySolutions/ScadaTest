@@ -1,0 +1,45 @@
+# Environments the runner can target. Pick one with --env.
+productionHosts: [prod-galaxy01, prod-hist01]   # the runner refuses to connect to these
+
+environments:
+  # Runs the samples with no SCADA system, against the in-memory demo plant.
+  demo:
+    allowWrites: true
+    adapters:
+      plant: { type: inmemory, settings: { model: demo } }
+    bindings: { tags: plant, alarms: plant, history: plant, hmi: plant, simulator: plant }
+
+  # The dedicated test VM: System Platform 2023, custom OPC UA simulator, Historian and an OMI ViewApp.
+  test-vm:
+    allowWrites: true
+    writablePatterns: ["P-*", "LT-*", "TT-*"]
+    tagMap: tagmap.yaml
+    evidenceDir: evidence
+    waits: { tags: 10s, alarms: 10s, hmi: 3s, history: 60s, poll: 250ms }
+    adapters:
+      galaxy:
+        type: opcua
+        settings:
+          endpoint: opc.tcp://test-vm:4840        # OI Gateway or the platform's OPC UA server
+          useSecurity: "true"
+          autoAcceptCertificates: "false"
+      sim:
+        type: opcua
+        settings:
+          endpoint: opc.tcp://test-vm:4841        # custom OPC UA simulator
+          simulator.object: ns=2;s=Simulator
+          simulator.loadScenario: ns=2;s=Simulator.LoadScenario
+          simulator.reset: ns=2;s=Simulator.Reset
+          simulator.injectFault: ns=2;s=Simulator.InjectFault
+          simulator.state: ns=2;s=Simulator.State
+      historian:
+        type: aveva-historian
+        settings:
+          connectionString: Server=test-vm;Database=Runtime;Integrated Security=true;TrustServerCertificate=true
+      omi:
+        type: aveva-omi                            # Windows only: copy ScadaTest.Hmi.Omi.dll into the runner's adapters folder
+        settings:
+          processName: ViewApp                     # set to the ViewApp runtime process name
+          hmiMap: hmimap.yaml
+    bindings: { tags: galaxy, history: historian, hmi: omi, simulator: sim }
+    # alarms: bind to the MXAccess adapter once it exists (roadmap phase 2)

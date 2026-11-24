@@ -1,0 +1,9 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <Description>AVEVA Historian adapter: tag history over SQL (Runtime database), alarm history via a configurable query.</Description>
+  </PropertyGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ScadaTest.Core\ScadaTest.Core.csproj" />
+    <PackageReference Include="Microsoft.Data.SqlClient" />
+  </ItemGroup>
+</Project>

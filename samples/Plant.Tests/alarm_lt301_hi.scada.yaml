@@ -1,0 +1,16 @@
+id: ALM-LT301-HI
+title: LT-301 high level alarm raises, acknowledges and clears
+requires: [simulator, alarms, history]
+tags: [alarms, area-300, smoke]
+setup:
+  - sim_reset: {}
+steps:
+  - sim_set: { input: LT-301.PV, value: 92.0 }        # Hi limit is 85
+  - expect_alarm: { source: LT-301, condition: Hi, state: active_unacked, priority: 500, within: 2s }
+  - ack: { alarm: LT-301.Hi, comment: "automated test" }
+  - expect_alarm: { source: LT-301, condition: Hi, state: active_acked, within: 2s }
+  - sim_set: { input: LT-301.PV, value: 50.0 }
+  - expect_alarm: { source: LT-301, condition: Hi, state: inactive, within: 2s }
+  - expect_history: { alarm: LT-301.Hi, events: [raise, ack, rtn], within: 60s }
+teardown:
+  - sim_reset: {}

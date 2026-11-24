@@ -1,0 +1,8 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <Description>Console, JUnit XML and JSON reports for scenario results.</Description>
+  </PropertyGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ScadaTest.Scenarios\ScadaTest.Scenarios.csproj" />
+  </ItemGroup>
+</Project>

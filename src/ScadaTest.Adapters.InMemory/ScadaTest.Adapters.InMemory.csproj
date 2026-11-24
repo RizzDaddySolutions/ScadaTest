@@ -1,0 +1,8 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <Description>An in-memory plant for unit-testing tests and the runner without a SCADA system.</Description>
+  </PropertyGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ScadaTest.Core\ScadaTest.Core.csproj" />
+  </ItemGroup>
+</Project>
