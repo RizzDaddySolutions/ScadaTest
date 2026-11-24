@@ -1,0 +1,21 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <IsPackable>false</IsPackable>
+    <IsTestProject>true</IsTestProject>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="Microsoft.NET.Test.Sdk" />
+    <PackageReference Include="NUnit" />
+    <PackageReference Include="NUnit3TestAdapter" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\src\ScadaTest.Core\ScadaTest.Core.csproj" />
+    <ProjectReference Include="..\..\src\ScadaTest.Scenarios\ScadaTest.Scenarios.csproj" />
+    <ProjectReference Include="..\..\src\ScadaTest.Reporting\ScadaTest.Reporting.csproj" />
+    <ProjectReference Include="..\..\src\ScadaTest.Adapters.InMemory\ScadaTest.Adapters.InMemory.csproj" />
+    <ProjectReference Include="..\..\src\ScadaTest.Runner\ScadaTest.Runner.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\..\samples\Plant.Tests\**\*" LinkBase="samples" CopyToOutputDirectory="PreserveNewest" />
+  </ItemGroup>
+</Project>

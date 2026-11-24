@@ -1,0 +1,12 @@
+id: TREND-TT201-STEP
+title: A temperature step on TT-201 is stored in history
+requires: [simulator, tags, history]
+tags: [trends, area-200]
+setup:
+  - sim_reset: {}
+steps:
+  - sim_load: { scenario: temperature_step, parameters: { to: 60.0 } }
+  - expect_tag: { tag: TT-201.PV, equals: 60.0, tolerance: 0.5, within: 10s }
+  - expect_history: { tag: TT-201.PV, contains: [20.0, 60.0], tolerance: 0.5, within: 60s }
+teardown:
+  - sim_reset: {}

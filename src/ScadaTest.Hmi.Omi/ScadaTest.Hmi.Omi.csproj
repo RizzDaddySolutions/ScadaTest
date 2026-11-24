@@ -1,0 +1,11 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net10.0-windows</TargetFramework>
+    <Description>HMI driver for AVEVA InTouch OMI ViewApps: UI Automation for navigation, pixel sampling for symbol state.</Description>
+  </PropertyGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ScadaTest.Core\ScadaTest.Core.csproj" />
+    <PackageReference Include="FlaUI.UIA3" />
+    <PackageReference Include="YamlDotNet" />
+  </ItemGroup>
+</Project>

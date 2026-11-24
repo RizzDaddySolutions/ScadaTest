@@ -1,0 +1,16 @@
+id: PUMP-P101-TRIP
+title: A trip on P-101 stops the pump and shows the fault
+requires: [tags, hmi, simulator]
+tags: [pumps, area-200]
+setup:
+  - sim_reset: {}
+  - sim_load: { scenario: normal_operation }
+steps:
+  - open_screen: Area200_Overview
+  - write: { tag: P-101.StartCmd, value: true }
+  - expect_tag: { tag: P-101.Running, equals: true, within: 10s }
+  - sim_fault: { device: P-101, fault: trip }
+  - expect_tag: { tag: P-101.Running, equals: false, within: 5s }
+  - expect_symbol: { symbol: P-101, state: fault, within: 3s }
+teardown:
+  - sim_reset: {}

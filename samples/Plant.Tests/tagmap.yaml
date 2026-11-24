@@ -1,0 +1,9 @@
+# Logical tag names used in tests, mapped to each adapter's address.
+templates:
+  galaxy: "ns=2;s=Galaxy.{name:nodash}"     # P-101.Running -> ns=2;s=Galaxy.P101.Running
+  sim: "ns=2;s=Sim.{name:nodash}"
+  historian: "{name:nodash}"
+tags:
+  LT-301.PV:
+    galaxy: "ns=2;s=Galaxy.LT301.PV"
+    sim: "ns=2;s=Sim.LT301.Level"
