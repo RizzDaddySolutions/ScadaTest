@@ -1,0 +1,13 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <AssemblyName>spike-historian</AssemblyName>
+    <RootNamespace>ScadaTest.Spike.Historian</RootNamespace>
+    <Description>Spike 3: query AVEVA Historian over SQL with the real HistorianAdapter, and find where alarm history lives.</Description>
+  </PropertyGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Spike.Common\Spike.Common.csproj" />
+    <ProjectReference Include="..\..\src\ScadaTest.Adapters.Historian\ScadaTest.Adapters.Historian.csproj" />
+    <ProjectReference Include="..\..\src\ScadaTest.Adapters.OpcUa\ScadaTest.Adapters.OpcUa.csproj" />
+  </ItemGroup>
+</Project>

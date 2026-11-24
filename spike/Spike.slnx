@@ -1,0 +1,7 @@
+<Solution>
+  <Project Path="Spike.Common/Spike.Common.csproj" />
+  <Project Path="Spike.OmiSymbol/Spike.OmiSymbol.csproj" />
+  <Project Path="Spike.OpcUaTags/Spike.OpcUaTags.csproj" />
+  <Project Path="Spike.Historian/Spike.Historian.csproj" />
+  <Project Path="Spike.Simulator/Spike.Simulator.csproj" />
+</Solution>

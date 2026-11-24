@@ -5,6 +5,8 @@
   <ItemGroup>
     <PackageVersion Include="FlaUI.UIA3" Version="5.0.0" />
     <PackageVersion Include="Microsoft.Data.SqlClient" Version="7.1.2" />
+    <!-- Spike only: builds the net48 MXAccess spike without the Visual Studio targeting pack. -->
+    <PackageVersion Include="Microsoft.NETFramework.ReferenceAssemblies" Version="1.0.3" />
     <!-- Pinned to the 1.5 line; 2.x is a breaking API redesign. Revisit after the spike. -->
     <PackageVersion Include="OPCFoundation.NetStandard.Opc.Ua.Client" Version="1.5.378.196" />
     <PackageVersion Include="OPCFoundation.NetStandard.Opc.Ua.Configuration" Version="1.5.378.196" />

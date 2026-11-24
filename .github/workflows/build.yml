@@ -14,6 +14,8 @@ jobs:
         with:
           global-json-file: global.json
       - run: dotnet build --configuration Release
+      - name: Build the phase-1 spike programs (MXAccess spike needs System Platform, so it is not built here)
+        run: dotnet build spike/Spike.slnx --configuration Release
       - run: dotnet test --configuration Release --no-build --logger "trx;LogFileName=results.trx"
       - name: Run sample scenarios against the demo plant
         run: dotnet run --project src/ScadaTest.Runner --configuration Release --no-build -- run samples/Plant.Tests --env demo --junit scenario-results.xml
