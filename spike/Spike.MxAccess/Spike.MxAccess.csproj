@@ -1,0 +1,28 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <!--
+    Spike 2b: MXAccess from a 32-bit .NET Framework 4.8 process (the shape of the planned MxHost).
+    Builds only on a machine with System Platform installed, so it is not in Spike.slnx or CI.
+    Override the interop path with: dotnet build -p:MxAccessDll="D:\path\ArchestrA.MxAccess.dll"
+  -->
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net48</TargetFramework>
+    <PlatformTarget>x86</PlatformTarget>
+    <AssemblyName>spike-mxaccess</AssemblyName>
+    <RootNamespace>ScadaTest.Spike.MxAccess</RootNamespace>
+    <ImplicitUsings>disable</ImplicitUsings>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <MxAccessDll Condition="'$(MxAccessDll)' == ''">$(MSBuildProgramFiles32)\ArchestrA\Framework\Bin\ArchestrA.MxAccess.dll</MxAccessDll>
+  </PropertyGroup>
+  <ItemGroup>
+    <!-- Lets the SDK build net48 without the Visual Studio targeting pack. -->
+    <PackageReference Include="Microsoft.NETFramework.ReferenceAssemblies" PrivateAssets="all" />
+    <Reference Include="ArchestrA.MxAccess">
+      <HintPath>$(MxAccessDll)</HintPath>
+      <Private>true</Private>
+    </Reference>
+  </ItemGroup>
+  <Target Name="CheckMxAccess" BeforeTargets="ResolveAssemblyReferences" Condition="!Exists('$(MxAccessDll)')">
+    <Error Text="ArchestrA.MxAccess.dll not found at '$(MxAccessDll)'. Find it with: dir /s /b &quot;C:\Program Files (x86)\ArchestrA\ArchestrA.MxAccess.dll&quot; then build with -p:MxAccessDll=&lt;path&gt;." />
+  </Target>
+</Project>

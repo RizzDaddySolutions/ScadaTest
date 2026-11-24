@@ -486,3 +486,8 @@ evidence/
 pki/
 results*.xml
 scenario-results.xml
+
+# Phase-1 spike output
+spike-results/
+spike/out/
+spike/out-x86/

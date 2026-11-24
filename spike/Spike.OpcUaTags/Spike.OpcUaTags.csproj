@@ -1,0 +1,12 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <AssemblyName>spike-opcua</AssemblyName>
+    <RootNamespace>ScadaTest.Spike.OpcUaTags</RootNamespace>
+    <Description>Spike 2a: read and write Galaxy attributes over OPC UA with the real OpcUaAdapter.</Description>
+  </PropertyGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Spike.Common\Spike.Common.csproj" />
+    <ProjectReference Include="..\..\src\ScadaTest.Adapters.OpcUa\ScadaTest.Adapters.OpcUa.csproj" />
+  </ItemGroup>
+</Project>

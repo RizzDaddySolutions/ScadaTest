@@ -76,4 +76,6 @@ This is the initial scaffold (roadmap phases 1 and 2 of the design). Not yet ver
 - Historian `History` query and the site-specific `alarmEventsQuery`.
 - OMI pixel sampling, which is the main question for the spike.
 
+The phase-1 spike that answers these on the test VM is in [spike/](spike/README.md): small console programs with a run checklist.
+
 Planned next: the MXAccess host (alarms), an HTML report, spreadsheet import, GRAccess test generation, and the Geo SCADA adapter.

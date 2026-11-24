@@ -1,0 +1,12 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <AssemblyName>spike-sim</AssemblyName>
+    <RootNamespace>ScadaTest.Spike.Simulator</RootNamespace>
+    <Description>Spike 4: drive the custom OPC UA simulator through its methods with the real OpcUaAdapter.</Description>
+  </PropertyGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Spike.Common\Spike.Common.csproj" />
+    <ProjectReference Include="..\..\src\ScadaTest.Adapters.OpcUa\ScadaTest.Adapters.OpcUa.csproj" />
+  </ItemGroup>
+</Project>

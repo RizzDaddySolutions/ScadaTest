@@ -1,0 +1,10 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <Description>Shared helpers for the phase-1 spike programs: argument parsing, PASS/FAIL reporting, raw OPC UA sessions.</Description>
+  </PropertyGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\src\ScadaTest.Core\ScadaTest.Core.csproj" />
+    <PackageReference Include="OPCFoundation.NetStandard.Opc.Ua.Client" />
+    <PackageReference Include="OPCFoundation.NetStandard.Opc.Ua.Configuration" />
+  </ItemGroup>
+</Project>
